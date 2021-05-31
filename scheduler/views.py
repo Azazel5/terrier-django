@@ -41,6 +41,7 @@ def home_view(request):
         technicians = {}
         for technician in Technician.objects.all():
             technicians[technician.pk] = ''
+            technicians['pretty_time'] = ''
 
         scheduling_obj[i] = technicians
 
@@ -48,6 +49,7 @@ def home_view(request):
     # workorder is within the range of any two time_list values. If it is found to be in range, 
     # use the iterating index (i) and technician id to update the scheduling_obj dictionary to X.
     for i in range(len(time_list)):
+        scheduling_obj[i]['pretty_time'] =  time_list[i]
         for technician in Technician.objects.all():
             technician_orders = work_orders.filter(
                 work_order_technician=technician)
