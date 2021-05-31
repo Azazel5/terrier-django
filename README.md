@@ -8,5 +8,5 @@ Using Django templates, I passed the database objects to the html file, created 
 
 1. Initialize a postgreSQL database and server on your computer
 2. Download the source code and set database credentials in settings.py using environment variables
-3. Make sure you have a csvs folder with the location, technicians, and work_orders csv files inside the terrier/scheduler directory 
+3. Make sure you have a csvs folder with the location, technicians, and work_orders csv files inside the scheduler directory (scheduler/csvs/locations.csv, technicians.csv, etc). The file names must match exactly.
 4. Type the command python manage.py runserver to start the webserver and navigate to localhost:8000
