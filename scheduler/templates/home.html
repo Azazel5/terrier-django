@@ -19,6 +19,8 @@
                 <th>Duration</th>
                 <th>Price</th>
             </tr>
+        </thead>
+        <tbody>
             {% for work_order in work_orders %}
             <tr>
                 <td>{{ work_order.work_order_technician.technician_name }}</td>
@@ -28,7 +30,7 @@
                 <td>{{ work_order.price }}</td>
             </tr>
             {% endfor %}
-            </tbody>
+        </tbody>
     </table>
 
     <h2>Scheduling Grid</h2>
@@ -39,18 +41,19 @@
                 {% for technican in technicians %}
                 <th>{{ technican.technician_name }}</th>
                 {% endfor %}
-                <th>Duration</th>
-                <th>Price</th>
             </tr>
-
-            {% for time in time_list %}
+        </thead>
+        <tbody>
+            {% for key, values in scheduling_obj.items %}
             <tr>
-                <td>
-                    {{ time }}
-                </td>
+                <td>{{ key }}</td>
+
+                {% for k, v in values.items %}
+                    <td>{{ v }}</td>
+                {% endfor %}
             </tr>
             {% endfor %}
-        </thead>
+        </tbody>
     </table>
 </body>
 
