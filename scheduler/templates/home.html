@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>work_orders.csv</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Technician</th>
+                <th>Location</th>
+                <th>Time</th>
+                <th>Duration</th>
+                <th>Price</th>
+            </tr>
+            {% for work_order in work_orders %}
+            <tr>
+                <td>{{ work_order.work_order_technician.technician_name }}</td>
+                <td>{{ work_order.work_order_location.location_name }}, {{ work_order.work_order_location.city }}</td>
+                <td>{{ work_order.time }}</td>
+                <td>{{ work_order.duration }}</td>
+                <td>{{ work_order.price }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+    </table>
+
+    <h2>Scheduling Grid</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Time</th>
+                {% for technican in technicians %}
+                <th>{{ technican.technician_name }}</th>
+                {% endfor %}
+                <th>Duration</th>
+                <th>Price</th>
+            </tr>
+
+            {% for time in time_list %}
+            <tr>
+                <td>
+                    {{ time }}
+                </td>
+            </tr>
+            {% endfor %}
+        </thead>
+    </table>
+</body>
+
+</html>
