@@ -30,6 +30,15 @@ Thus, breaking down the table according to row made me realize that I had to rep
 
 Overall, this was a very fun project to work on, and I learnt quite a lot!
 
+## Running Examples
+
+![Test Image 1](example1.png)
+
+Clicking on the 11:00 cell for Bill Keller
+
+![Test Image 1](example2.png)
+
+
 ## HOW TO USE
 
 1. Initialize a postgreSQL database and server on your computer
